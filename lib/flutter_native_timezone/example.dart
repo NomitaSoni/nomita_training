@@ -17,29 +17,6 @@ class _MyAppState extends State<MyApp> {
   String nativeTimezone = '';
   String nativeTime = '';
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _initData();
-  // }
-
-  // Future<void> _initData() async {
-  //   try {
-  //     _timezone = await FlutterNativeTimezone.getLocalTimezone();
-  //   } catch (e) {
-  //     print('Could not get the local timezone');
-  //   }
-  //   try {
-  //     _availableTimezones = await FlutterNativeTimezone.getAvailableTimezones();
-  //     _availableTimezones.sort();
-  //   } catch (e) {
-  //     print('Could not get available timezones');
-  //   }
-  //   if (mounted) {
-  //     setState(() {});
-  //   }
-  // }
-
  @override
   void initState() {
     super.initState();
@@ -55,7 +32,6 @@ class _MyAppState extends State<MyApp> {
       nativeTime = now.toString();
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -92,18 +68,6 @@ class _MyAppState extends State<MyApp> {
         onPressed: getNativeTime,
         child: const Icon(Icons.refresh),
       ),
-        // Column(
-        //   children: <Widget>[
-        //     Text('Local timezone: $_timezone\n'),
-        //     Text('Available timezones:'),
-        //     Expanded(
-        //       child: ListView.builder(
-        //         itemCount: _availableTimezones.length,
-        //         itemBuilder: (_, index) => Text(_availableTimezones[index]),
-        //       ),
-        //     )
-        //   ],
-        // ),
       ),
     );
   }
